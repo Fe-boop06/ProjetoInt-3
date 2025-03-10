@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="pokedex-container">
+        <header>
+            <h1>
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokébola" class="header-icon">
+                Pokédex
+            </h1>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <h2>Adicionar Pokémon</h2>
+                <form id="add-pokemon-form">
+                    <div class="input-group">
+                        <i class="fas fa-pencil-alt"></i>
+                        <input type="text" id="name" name="name" placeholder="Nome do Pokémon" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="number" name="number" placeholder="Número da Imagem" required readonly>
+                    </div>
+                    <div class="type-buttons" id="type-buttons">
+                        
+                        <!-- Botões de tipos serão adicionados aqui dinamicamente -->
+                    </div>
+                    <button type="submit">Adicionar Pokémon</button>
+                </form>
+            </div>
+
+            <!-- Lista de Pokémon adicionados -->
+            <div class="pokedex" id="pokedex">
+                <!-- Pokémon serão adicionados aqui dinamicamente -->
+            </div>
+             <!-- Grade de imagens dos Pokémon -->
+        <div class="image-grid" id="image-grid">
+            <!-- Imagens dos Pokémon serão carregadas aqui dinamicamente -->
+        </div>
+
+        <div id="pokemon-detail" style="display: none;">
+            <span class="close-detail">&times;</span>
+            <img id="detail-image" src="" alt="Pokémon">
+            <h2 id="detail-name"></h2>
+            <div id="detail-types"></div>
+            <div id="detail-actions"></div>
+        </div>
+        
+            </div>
+        </main>
+    </div>
+
+    <script src="{{url_for('static', path='/js/script.js') }}"></script>
+</body>
+</html>

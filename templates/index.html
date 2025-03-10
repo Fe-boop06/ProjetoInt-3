@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Login e Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles1.css') }}">
+    
+<body>
+    <div class="background"></div>
+    <div class="auth-container">
+        <div class="title-container">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" class="title-image">
+            <h1 class="title">Pokédex</h1>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" class="title-image">
+        </div>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="login">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            <button class="tab-button" data-tab="register">
+                <i class="fas fa-user-plus"></i> Cadastro
+            </button>
+        </div>
+        <div id="login" class="tab-content active">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="login-username" name="username" placeholder="Usuário" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="login-password" name="password" placeholder="Senha" required>
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+        <div id="register" class="tab-content">
+            <h2>Cadastro</h2>
+            <form id="register-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="register-username" name="username" placeholder="Usuário" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="register-password" name="password" placeholder="Senha" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="register-confirm-password" name="confirm-password" placeholder="Confirme a Senha" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{url_for('static', path='/js/script-1.js') }}"></script>
+</body>
+</html>
